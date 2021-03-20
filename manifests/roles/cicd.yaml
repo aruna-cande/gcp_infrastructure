@@ -1,0 +1,31 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: cicd-role
+  namespace: geolocation
+rules:
+- apiGroups:
+  - ""
+  - apps
+  - extensions
+  - batch
+  resources:
+  - '*'
+  - services
+  - deployments
+  - cronjobs
+  verbs:
+  - '*'
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: cicd-role
+  namespace: geolocation
+subjects:
+  - kind: User
+    name: "${unique_id}"
+roleRef:
+  kind: Role
+  name: cicd-role
+  apiGroup: rbac.authorization.k8s.io

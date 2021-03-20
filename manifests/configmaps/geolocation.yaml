@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: geolocation-config
+  namespace: geolocation
+data:
+  postgres_host: "${postgres_host}"
+  postgres_port: "${postgres_port}"
+  postgres_db: "${postgres_db}"
+  api_port: "${api_port}"

@@ -1,0 +1,7 @@
+project="gcp-playground-project"
+region="us-east1"
+machine_type="n1-standard-1"
+app_subnet="10.1.0.0/20"
+vpc_name="test-gke-k8s-vpc-cluster"
+db_instance_type="db-f1-micro"
+postgres_dbname="geolocations"
